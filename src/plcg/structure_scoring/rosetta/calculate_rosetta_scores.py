@@ -55,7 +55,6 @@ def get_all_rosetta_scores():
         else:
             pose = pose_from_pdb(path)
             scorefxn = get_fa_scorefxn()
-            docked_score = scorefxn(pose)
 
             dict_list = [
                 get_energy(scorefxn, pose),
@@ -81,7 +80,6 @@ def get_all_rosetta_scores():
         pdb_path = sys.argv[3]
         pose = pose_from_pdb(pdb_path)
         scorefxn = get_fa_scorefxn()
-        docked_score = scorefxn(pose)
 
         dict_list = [
             get_energy(scorefxn, pose),
