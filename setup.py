@@ -20,12 +20,9 @@ setup(
     ],
     packages=find_packages(
         where="src",
-        exclude=[
-            "src/test",
-            "src/plcg/structure_scoring/rosetta/calculate_rosetta_scores.py",
-            "src/plcg/structure_scoring/rosetta/score_calculations.py",
-        ],
+        includes=["plcg*"],
     ),
+    package_dir={"": "src"},
     python_requires=">=3.11",
     long_description_content_type="text/markdown",
     long_description="A variety of python utilities for biology",
