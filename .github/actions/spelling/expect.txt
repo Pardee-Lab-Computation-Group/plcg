@@ -1,0 +1,11 @@
+diff
+num
+aa
+seq
+plddt
+dir
+pdb
+os
+rosetta
+spserver
+colabfold

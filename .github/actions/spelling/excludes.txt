@@ -1,0 +1,6 @@
+# Ignore the action's configuration data
+^\.github/actions/spelling/
+# Ignore all GitHub workflow files
+^\.github/workflows/
+# Ignore all files beginning in .
+^\.*
