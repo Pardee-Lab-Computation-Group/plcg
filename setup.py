@@ -20,7 +20,7 @@ setup(
     ],
     packages=find_packages(
         where="src",
-        includes=["plcg*"],
+        include=["plcg*"],
     ),
     package_dir={"": "src"},
     python_requires=">=3.11",
