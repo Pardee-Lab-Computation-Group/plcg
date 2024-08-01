@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="plcg",
-    version="0.0.1",
+    version="0.0.2",
     author="Spencer Perkins",
     author_email="spencer.perkins44sp@gmail.com",
     description="Computational biology and machine learning utilities for the Pardee Lab Computation Group",
@@ -19,7 +19,7 @@ setup(
         "Operating System :: OS Independent",
     ],
     packages=find_packages(
-        where="src/plcg",
+        where="src",
         exclude=[
             "test",
             "plcg/structure_scoring/rosetta/calculate_rosetta_scores.py",
