@@ -27,5 +27,7 @@ setup(
         ],
     ),
     python_requires=">=3.11",
+    long_description_content_type="text/markdown",
+    long_description="A variety of python utilities for biology",
     install_requires=["pandas==2.2.0", "numpy==1.26.3", "python-Levenshtein==0.23.0"],
 )
