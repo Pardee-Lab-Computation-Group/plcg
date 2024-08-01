@@ -21,9 +21,9 @@ setup(
     packages=find_packages(
         where="src",
         exclude=[
-            "test",
-            "plcg/structure_scoring/rosetta/calculate_rosetta_scores.py",
-            "plcg/structure_scoring/rosetta/score_calculations.py",
+            "src/test",
+            "src/plcg/structure_scoring/rosetta/calculate_rosetta_scores.py",
+            "src/plcg/structure_scoring/rosetta/score_calculations.py",
         ],
     ),
     python_requires=">=3.11",
