@@ -2,7 +2,7 @@ import os
 
 
 def get_plddt(pdb, working_dir: str):
-    sum = 0
+    plddt_sum = 0
     length = 0
     pdb_filepath = "working_plddt.pdb"
     if os.path.exists(working_dir + pdb_filepath):
@@ -14,7 +14,7 @@ def get_plddt(pdb, working_dir: str):
         for line in file:
             split = line.split()
             if len(split) > 10:
-                sum += float(split[10])
+                plddt_sum += float(split[10])
                 length += 1
     os.remove(working_dir + pdb_filepath)
-    return sum / length
+    return plddt_sum / length

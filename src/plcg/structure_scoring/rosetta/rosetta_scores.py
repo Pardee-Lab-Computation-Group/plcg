@@ -17,7 +17,7 @@ def calculate_rosetta_scores(
 
 
 def run_rosetta(sequence: str, pdb_path: str, python_rosetta_interpreter_path: str):
-    out = subprocess.run(
+    subprocess.run(
         [
             python_rosetta_interpreter_path,
             "./get_rosetta_scores.py",

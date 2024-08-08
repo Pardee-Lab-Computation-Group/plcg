@@ -1,13 +1,13 @@
 from src.plcg.constants.values import AMINO_ACIDS
 
 
-def num_list_to_aa_seq(input: list[int]) -> str:
+def num_list_to_aa_seq(amino_acid_number_list: list[int]) -> str:
     """Convert a sequence of numbers corresponding to amino acids into a sequence
     of amino acids (in form of a string)
 
     - input: A sequence of numbers where each number is from 0 to 19
     """
-    return "".join([AMINO_ACIDS[int(num)] for num in input])
+    return "".join([AMINO_ACIDS[int(num)] for num in amino_acid_number_list])
 
 
 def aa_seq_to_num_list(seq: str) -> list[int]:
@@ -23,5 +23,5 @@ def num_to_aa(num: int) -> str:
     return AMINO_ACIDS[int(num)]
 
 
-def aa_to_num(amino_acids, aa: str) -> int:
+def aa_to_num(aa: str) -> int:
     return AMINO_ACIDS.index(aa)

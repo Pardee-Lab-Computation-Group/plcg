@@ -9,5 +9,5 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 
-def softmax(self, x: np.ndarray) -> np.ndarray:
+def softmax(x: np.ndarray) -> np.ndarray:
     return np.exp(x) / np.nansum(np.exp(x))
