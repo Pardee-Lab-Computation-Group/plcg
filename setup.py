@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="plcg",
-    version="0.0.3",
+    version="0.0.4",
     author="Spencer Perkins",
     author_email="spencer.perkins44sp@gmail.com",
     description="Computational biology and machine learning utilities for the Pardee Lab Computation Group",
@@ -23,7 +23,7 @@ setup(
         include=["plcg*"],
     ),
     package_dir={"": "src"},
-    python_requires=">=3.11",
+    python_requires=">=3.10",
     long_description_content_type="text/markdown",
     long_description="A variety of python utilities for biology",
     install_requires=["pandas==2.2.0", "numpy==1.26.3", "python-Levenshtein==0.23.0"],
