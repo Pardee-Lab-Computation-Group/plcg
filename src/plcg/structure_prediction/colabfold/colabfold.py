@@ -3,7 +3,7 @@ import os
 import shutil
 import subprocess
 
-from src.plcg.structure_prediction.fasta.fasta import save_fasta_file
+from plcg.structure_prediction.fasta.fasta import save_fasta_file
 
 
 def run_colabfold(input_filepath: str, output_dir: str):

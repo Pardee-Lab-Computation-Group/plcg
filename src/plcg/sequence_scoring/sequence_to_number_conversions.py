@@ -1,4 +1,4 @@
-from src.plcg.constants.values import AMINO_ACIDS
+from plcg.constants.values import AMINO_ACIDS
 
 
 def num_list_to_aa_seq(amino_acid_number_list: list[int]) -> str:
