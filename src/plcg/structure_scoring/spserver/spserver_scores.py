@@ -47,14 +47,14 @@ def read_spserver_xml(filepath: str):
 
 
 def cleanup_spserver_files(spserver_path_parent_dir: str):
-    if os.path.exists(spserver_path_parent_dir + "workingspserverpdb/"):
-        shutil.rmtree(spserver_path_parent_dir + "workingspserverpdb/")
-    if os.path.exists(spserver_path_parent_dir + "workingspserver/"):
-        shutil.rmtree(spserver_path_parent_dir + "workingspserver/")
+    if os.path.exists(spserver_path_parent_dir + "working_spserver_pdb/workingpdb.pdb"):
+        os.remove(spserver_path_parent_dir + "working_spserver_pdb/workingpdb.pdb")
+    if os.path.exists(spserver_path_parent_dir + "working_spserver_output/"):
+        shutil.rmtree(spserver_path_parent_dir + "working_spserver_output/")
 
 
 def calculate_sp_server_scores(pdb, spserver_path_parent_dir: str):
-    pdb_filepath = "workingspserverpdb/workingpdb.pdb"
+    pdb_filepath = "working_spserver_pdb/workingpdb.pdb"
     cleanup_spserver_files(spserver_path_parent_dir)
     with open(spserver_path_parent_dir + pdb_filepath, "wb") as output_file:
         output_file.write(bytes(pdb[0]))
