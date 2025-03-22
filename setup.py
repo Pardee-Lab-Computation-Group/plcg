@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="plcg",
-    version="1.0.1",
+    version="1.0.3",
     author="Spencer Perkins",
     author_email="spencer.perkins44sp@gmail.com",
     description="Computational biology and machine learning utilities for the Pardee Lab Computation Group",
