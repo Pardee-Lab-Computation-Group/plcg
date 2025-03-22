@@ -71,6 +71,11 @@ jobs:
         with:
           name: python-package-distributions
           path: dist/
+      - name: Extract version from setup.py
+        id: get_version
+        run: |
+          VERSION=$(python setup.py --version)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
       - name: Sign the dists with Sigstore
         uses: sigstore/gh-action-sigstore-python@v3.0.0
         with:
@@ -82,7 +87,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: >-
           gh release create
-          '${{ github.ref_name }}'
+          "$VERSION"
           --repo '${{ github.repository }}'
           --notes ""
       - name: Upload artifact signatures to GitHub Release
@@ -90,7 +95,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: >-
           gh release upload
-          '${{ github.ref_name }}' dist/**
+          "$VERSION" dist/**
           --repo '${{ github.repository }}'
 
   publish-to-testpypi:
