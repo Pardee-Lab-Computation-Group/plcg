@@ -24,7 +24,7 @@ def run_colabfold_and_get_filepath(seq: str, working_dir: str):
     if os.path.exists(working_dir):
         shutil.rmtree(working_dir)
     os.mkdir(working_dir)
-    with open(working_dir + "working.csv", "w") as f:
+    with open(working_dir + "working.csv", "w", encoding="utf-8") as f:
         write = csv.writer(f)
         write.writerows([["id", "sequence"], ["sequence", seq]])
     files = os.listdir(working_dir)
@@ -42,7 +42,16 @@ def run_colabfold_and_get_filepath(seq: str, working_dir: str):
             else:
                 run_colabfold(working_dir + "working.csv", working_dir)
                 files = os.listdir(working_dir)
-    return pdb_filepath
+
+    json_filepath = [result for result in files if "scores_rank_001" in result]
+    ptm_value = None
+    if len(json_filepath) > 0:
+        json_filepath = json_filepath[0]
+        with open(working_dir + json_filepath, "r", encoding="utf-8") as f:
+            data = f.read()
+            ptm_value = data.get("ptm")
+
+    return pdb_filepath, ptm_value
 
 
 def colabfold_batch(fasta_filepath: str, output_dir: str):
