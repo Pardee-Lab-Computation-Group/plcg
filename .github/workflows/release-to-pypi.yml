@@ -3,6 +3,7 @@ name: Publish Python 🐍 distribution 📦 to PyPI and TestPyPI
 on:
   push:
     branches:
+      - main
       - test-pypi
     paths-ignore:
       - "README.md"
@@ -32,9 +33,21 @@ jobs:
           name: python-package-distributions
           path: dist/
 
+  publish-to-testpypi:
+    name: Publish Python 🐍 distribution 📦 to TestPyPI
+    if: github.ref == 'refs/heads/test-pypi'
+    needs:
+      - build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/plcg
+
   publish-to-pypi:
     name: >-
       Publish Python 🐍 distribution 📦 to PyPI
+    if: github.ref == 'refs/heads/main'
     needs:
       - build
     runs-on: ubuntu-latest
@@ -57,6 +70,7 @@ jobs:
     name: >-
       Sign the Python 🐍 distribution 📦 with Sigstore
       and upload them to GitHub Release
+    if: github.ref == 'refs/heads/main'
     needs:
       - publish-to-pypi
     runs-on: ubuntu-latest
